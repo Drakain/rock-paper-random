@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Playfair+Display+SC&family=Shadows+Into+Light&display=swap');
+
+* {
+    padding: 0;
+    border: none;
+    margin: 0;
+}
+
+#logo {
+    font-family: 'Playfair Display SC', serif;
+}
+
+#logo-random {
+    font-family: 'Shadows Into Light', cursive;
+}
