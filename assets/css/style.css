@@ -40,3 +40,18 @@ h2, h3 {
     top: 0;
     font-size: 80px;
 }
+
+/* The score board */
+.score-board {
+    position: absolute;
+    display: flex;
+    width: 50vw;
+    justify-content: space-evenly;
+    top: 200px;
+}
+
+.p-score,.c-score {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 25px;
+}
