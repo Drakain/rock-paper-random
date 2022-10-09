@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Playfair+Display+SC&family=Shadows+Into+Light&display=swap');
 
+/* Styles applied to the whole document */
 * {
     padding: 0;
     border: none;
     margin: 0;
+    box-sizing: border-box;
+}
+
+#game {
+    font-family: 'Crimson Text', serif;
 }
 
 #logo {
@@ -12,4 +18,25 @@
 
 #logo-random {
     font-family: 'Shadows Into Light', cursive;
+}
+
+h2, h3 {
+    font-family: 'Playfair Display SC', serif;
+}
+
+/* To center everything in the game-section */
+#game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* The main logo */
+#logo {
+    position: absolute;
+    top: 0;
+    font-size: 80px;
 }
