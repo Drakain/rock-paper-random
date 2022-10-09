@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A site where you can test your luck against a truly random outcome in the form of a game of rock-paper-scissors at various levels of complexity or simply get help with your decision making.">
-    <meta name="keywords" content="random, rock, paper, scissors, spock, lizard, luck, decision making">
+    <meta name="description" content="A site where you can test your luck against a truly random outcome in the form of a game of rock-paper-scissors at a higher than usual level of complexity or simply get help with your decision making.">
+    <meta name="keywords" content="random, rock, paper, scissors, human, gun, sponge, air, fire, water, luck, decision making">
 
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -14,30 +14,64 @@
 </head>
 
 <body>
-    <header>
-        <a href="index.html"><h1 id="logo">Rock Paper <span id="logo-random">Random</span></h1></a>
-        <nav>
-            <ul id="nav-menu">
-                <li>
-                    <a href="rules.html">Rules</a>
-                </li>
-                <li>
-                    <a href="index.html" class="active-page">Play</a>
-                </li>
+    <section id="game">
+        <!-- Title -->
+        <h1 id="logo">Rock Paper <span id="logo-random">Random</span></h1>
+
+        <!-- Displays the score -->
+        <div class="score"> 
+            <div class="player-score">
+                <h2>You</h2>
+                <p class="p-score">0</p>
+            </div>      
+            <div class="computer-score">
+                <h2>Computer</h2>
+                <p class="c-score">0</p>
+            </div>
+        </div>
+
+        <div class="move">Choose your move</div>
+
+        <!-- Shows how many moves are left -->
+        <div class="moves-left">Moves Left: 10</div>
+
+        <!-- Options available to the player -->
+        <div class="options">
+            <button class="button button-rock" aria-label="Choose Rock">Rock</button>
+            <button class="button button-paper" aria-label="Choose Paper">Paper</button>
+            <button class="button button-scissors" aria-label="Choose Scissors">Scissors</button>
+            <button class="button button-human" aria-label="Choose Human">Human</button>
+            <button class="button button-gun" aria-label="Choose Gun">Gun</button>
+            <button class="button button-sponge" aria-label="Choose Sponge">Sponge</button>
+            <button class="button button-air" aria-label="Choose Air">Air</button>
+            <button class="button button-fire" aria-label="Choose Fire">Fire</button>
+            <button class="button button-water" aria-label="Choose Water">Water</button>   
+        </div>
+
+        <!-- Final result of the game -->
+        <div class="result"></div>
+
+        <!-- Allows the game to be reloaded once it is finsihed -->
+        <button class="reload" aria-label="Reload"></button>
+    </section>
+
+    <footer>
+        <h3>Rules:</h3>
+        <p>
+            <ul id="rules-list">
+                <li>ROCK pounds out FIRE and crushes SCISSORS, HUMAN and SPONGE.</li>
+                <li>PAPER fans AIR, covers ROCK, floats on WATER and outlaws GUN.</li>
+                <li>SCISSORS swish THROUGH AIR, cut PAPER, HUMAN and SPONGE.</li>
+                <li>HUMAN cleans with SPONGE, writes on PAPER, breathes AIR and drinks WATER.</li>
+                <li>GUN targets ROCK, uses FIRE, breaks SCISSORS and shoots HUMAN.</li>
+                <li>SPONGE soaks PAPER, uses AIR pockets, absorbs WATER and cleans GUN.</li>
+                <li>AIR blows out FIRE, erodes ROCK, evaporates WATER and tarnishes GUN.</li>
+                <li>FIRE melts SCISSORS, burns PAPER, HUMAN and SPONGE.</li>
+                <li>WATER erodes ROCK, puts out FIRE, rusts SCISSORS and GUN.</li>
             </ul>
-        </nav>
-    </header>
-
-    <div id="game-area">
-
-    </div>
-
-    <div id="score-area">
-        <p class="score">Wins <span id="wins">0</span></p>
-        <p class="score">Losses <span id="losses">0</span></p>
-    </div>
-    
-    <footer></footer>
+        </p>
+        <img id="rules-img" src="assets/images/rps9.webp" alt="An image explaining the rules of the game.">
+    </footer>
 
     <script src="assets/js/script.js"></script>
     <!-- Font Awesome script -->
