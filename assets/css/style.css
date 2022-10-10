@@ -99,3 +99,9 @@
 .moves-left {
     font-size: 30px;
 }
+
+/* The box containing the rules */
+#rules-box {
+    position: absolute;
+    bottom: 80px;
+}
