@@ -8,11 +8,7 @@
     box-sizing: border-box;
 }
 
-#game {
-    font-family: 'Crimson Text', serif;
-}
-
-#logo {
+#logo, h2, h3 {
     font-family: 'Playfair Display SC', serif;
 }
 
@@ -20,11 +16,7 @@
     font-family: 'Shadows Into Light', cursive;
 }
 
-h2, h3 {
-    font-family: 'Playfair Display SC', serif;
-}
-
-/* To center everything in the game-section */
+/* To center everything in the game-section and add some general styling */
 #game {
     display: flex;
     flex-direction: column;
@@ -32,6 +24,8 @@ h2, h3 {
     align-items: center;
     height: 100vh;
     width: 100vw;
+    font-family: 'Crimson Text', serif;
+    background-color: rgb(38,0, 110);
 }
 
 /* The main logo */
@@ -42,7 +36,7 @@ h2, h3 {
 }
 
 /* The score board */
-.score-board {
+.scoreboard {
     position: absolute;
     display: flex;
     width: 50vw;
@@ -54,4 +48,54 @@ h2, h3 {
     text-align: center;
     margin-top: 20px;
     font-size: 25px;
+}
+
+/* The choose-move text */
+.choose-move {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* The game-buttons */
+.options {
+    display: flex;
+    height: 5vh;
+    width: 60vw;
+    margin: 40px 0;
+    justify-content: space-evenly;
+}
+
+.button {
+    padding: 15px;
+    width: 100px;
+    border-radius: 10px;
+    background: rgb(158, 20, 2);
+    cursor: pointer;
+}
+
+.button:hover {
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+}
+
+/* The reload button */
+.reload {
+    display: none;
+    height: 100px;
+    width: 100px;
+    margin-top: 10px;
+    padding: 15px;
+    background: rgb(158, 20, 2);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.reload:hover {
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+}
+
+/* The counter that shows the number of moves left */
+.moves-left {
+    font-size: 30px;
 }
