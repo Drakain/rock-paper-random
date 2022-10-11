@@ -7,39 +7,130 @@ function game() {
 
     // Function to play the game
     function playGame() {
-        let rockBtn = document.querySelector('button-rock');
-        let paperBtn = document.querySelector('button-paper');
-        let scissorsBtn = document.querySelector('button-scissors');
-        let humanBtn = document.querySelector('button-human');
-        let gunBtn = document.querySelector('button-gun');
-        let spongeBtn = document.querySelector('button-sponge');
-        let airBtn = document.querySelector('button-air');
-        let fireBtn = document.querySelector('button-fire');
-        let waterBtn = document.querySelector('button-water');
-        let playerOptions = [rockBtn, paperBtn, scissorsBtn, humanBtn, gunBtn, spongeBtn, airBtn, fireBtn, waterBtn];
-        let computerOptions = ['rock', 'paper', 'scissors', 'human', 'gun', 'sponge', 'air', 'fire', 'water'];
+        const rockBtn = document.querySelector('button-rock');
+        const paperBtn = document.querySelector('button-paper');
+        const scissorsBtn = document.querySelector('button-scissors');
+        const humanBtn = document.querySelector('button-human');
+        const gunBtn = document.querySelector('button-gun');
+        const spongeBtn = document.querySelector('button-sponge');
+        const airBtn = document.querySelector('button-air');
+        const fireBtn = document.querySelector('button-fire');
+        const waterBtn = document.querySelector('button-water');
+        const playerOptions = [rockBtn, paperBtn, scissorsBtn, humanBtn, gunBtn, spongeBtn, airBtn, fireBtn, waterBtn];
+        const computerOptions = ['rock', 'paper', 'scissors', 'human', 'gun', 'sponge', 'air', 'fire', 'water'];
 
 
         // Function to start the game when the player clicks one of the buttons
         playerOptions.forEach(option => {
             option.addEventListener('click', function() {
 
-                let movesLeft = document.querySelector('moves-left');
+                const movesLeft = document.querySelector('moves-left');
                 moves++;
                 movesLeft.innerText = `Moves left: ${10-moves}`;
 
-                let choiceInteger = Math.floor(Math.random()*9);
-                let computerChoice = computerOptions[choiceInteger];
+                const choiceInteger = Math.floor(Math.random()*9);
+                const computerChoice = computerOptions[choiceInteger];
 
+                // Function that checks who wins
                 winner(this.innerText, computerChoice);
 
+                // Limits the game to 10 moves
                 if (moves === 10) {
                     gameOver(playerOptions, movesLeft);
                 }
-
             })
         });
     }
+
+    function winner(player, computer) {
+        const result = document.querySelector('.result');
+        const playerScoreCount = document.querySelector('.p-score');
+        const computerScoreCount = document.querySelector('.c-score');
+        const player = player.toLowerCase();
+        const computer = computer.toLowerCase();
+
+        if (player === computer) {
+            result.textContent = 'Tie'
+        } else if (player === 'rock' && computer === 'fire' || 'scissors' || 'human' || 'sponge') {
+            result.textContent = 'You won!';
+            playerScore++;
+            playerScoreCount.textContent = playerScore;
+        } else if (player === 'rock' && computer === 'paper' || 'air' || 'water' || 'gun') {
+            result.textContent = 'Computer won!';
+            computerScore++;
+            computerScoreCount.textContent = computerScore;
+        } else if (player === 'paper' && computer === 'rock' || 'air' || 'water' || 'gun') {
+            result.textContent = 'You won!';
+            computerScore++;
+            computerScoreCount.textContent = computerScore;
+        } else if (player === 'paper' && computer === 'fire' || 'scissors' || 'human' || 'sponge') {
+            result.textContent = 'Computer won!';
+            computerScore++;
+            computerScoreCount.textContent = computerScore;
+        } else if (player === 'scissors' && computer === 'paper' || 'air' || 'human' || 'sponge') {
+            result.textContent = 'You won!';
+            computerScore++;
+            computerScoreCount.textContent = computerScore;
+        } else if (player === 'scissors' && computer === 'rock' || 'fire' || 'water' || 'gun') {
+            result.textContent = 'Computer won!';
+            computerScore++;
+            computerScoreCount.textContent = computerScore;
+        } else if (player === 'human' && computer === 'paper' || 'air' || 'water' || 'sponge') {
+            result.textContent = 'You won!';
+            computerScore++;
+            computerScoreCount.textContent = computerScore;
+        } else if (player === 'human' && computer === 'rock' || 'fire' || 'scissors' || 'gun') {
+            result.textContent = 'Computer won!';
+            computerScore++;
+            computerScoreCount.textContent = computerScore;
+        } else if (player === 'gun' && computer === 'rock' || 'fire' || 'scissors' || 'human') {
+            result.textContent = 'You won!';
+            computerScore++;
+            computerScoreCount.textContent = computerScore;
+        } else if (player === 'gun' && computer === 'paper' || 'air' || 'water' || 'sponge') {
+            result.textContent = 'Computer won!';
+            computerScore++;
+            computerScoreCount.textContent = computerScore;
+        } else if (player === 'sponge' && computer === 'paper' || 'air' || 'water' || 'gun') {
+            result.textContent = 'You won!';
+            computerScore++;
+            computerScoreCount.textContent = computerScore;
+        } else if (player === 'sponge' && computer === 'rock' || 'fire' || 'scissors' || 'human') {
+            result.textContent = 'Computer won!';
+            computerScore++;
+            computerScoreCount.textContent = computerScore;
+        } else if (player === 'air' && computer === 'fire' || 'rock' || 'water' || 'gun') {
+            result.textContent = 'You won!';
+            computerScore++;
+            computerScoreCount.textContent = computerScore;
+        } else if (player === 'air' && computer === 'paper' || 'scissors' || 'human' || 'sponge') {
+            result.textContent = 'Computer won!';
+            computerScore++;
+            computerScoreCount.textContent = computerScore;
+        } else if (player === 'fire' && computer === 'scissors' || 'human' || 'paper' || 'sponge') {
+            result.textContent = 'You won!';
+            computerScore++;
+            computerScoreCount.textContent = computerScore;
+        } else if (player === 'fire' && computer === 'rock' || 'air' || 'water' || 'gun') {
+            result.textContent = 'Computer won!';
+            computerScore++;
+            computerScoreCount.textContent = computerScore;
+        } else if (player === 'water' && computer === 'rock' || 'fire' || 'scissors' || 'gun') {
+            result.textContent = 'You won!';
+            computerScore++;
+            computerScoreCount.textContent = computerScore;
+        } else if (player === 'water' && computer === 'paper' || 'air' || 'human' || 'sponge') {
+            result.textContent = 'Computer won!';
+            computerScore++;
+            computerScoreCount.textContent = computerScore;
+        } else {
+            result.textContent = 'Something went wrong...'
+        }
+    } 
+
 }
 
-// Create functions for winner and game over!
+
+
+
+// Create functions for game over!
