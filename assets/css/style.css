@@ -153,32 +153,167 @@ button:focus, button:active {
 }
 
 .paper {
-   background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-   box-shadow: 0px 6px 0px 0px hsl(229, 62%, 34%);
+   background: linear-gradient(rgb(230, 89%, 62%), rgb(212, 177, 79));
+   box-shadow: 0px 6px 0px 0px rgb(216, 185, 146);
    top: 130px;
    right: 115px;
 }
 
 .scissors {
-   background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-   box-shadow: 0px 6px 0px 0px hsl(343, 70%, 30%);
+   background: linear-gradient(rgb(119, 3, 3), rgb(179, 26, 26));
+   box-shadow: 0px 6px 0px 0px rgb(199, 21, 21);
    bottom: 0;
    right: 178px;
 }
 
 .lizard {
-   background: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
-   box-shadow: 0px 6px 0px 0px hsl(259, 48%, 38%);
+   background: linear-gradient(rgb(67, 221, 19), rgb(15, 182, 51));
+   box-shadow: 0px 6px 0px 0px rgb(18, 153, 14);
    bottom: 0;
    left: 180px;
 }
 
 .spock {
-   background: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
-   box-shadow: 0px 6px 0px 0px hsl(197, 54%, 36%);
+   background: linear-gradient(rgb(250, 110, 45), rgb(255, 7, 7));
+   box-shadow: 0px 6px 0px 0px rgb(226, 85, 30);
    top: 130px;
    left: 115px;
 }
+
+/* Choices */
+.picked-option {
+    align-items: center;
+    width: 100%;
+    padding: 30px 10px;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.picked-option p {
+    font-size: 23px;
+    line-height: 1;
+    margin: 0 0 66px;
+}
+
+.picked-option .game-card {
+    position: static;
+    height: 300px;
+    width: 295px;
+}
+
+.picked-option .game-card:before {
+    width: 230px;
+    height: 221px;
+}
+
+.picked-option .game-card img {
+    width: 100px;
+}
+
+.choice {
+    width: 50%;
+    height: 100%;
+    align-items: center;
+}
+
+.result {
+    white-space: nowrap;
+    font-size: 30px;
+}
+
+.result .title {
+    margin: 53px 0 17px;
+    font-size: 58px;
+    line-height: 1;
+}
+
+.result button {
+    border: 1px solid rgb(217, 16%, 45%);
+    border-radius: 10px;
+    padding: 14px 63px;
+    font-size: 16px;
+    cursor: pointer;
+    background: linear-gradient(to left, rgb(255, 255, 255) 50%, transparent 50%);
+    background-size: 250% 100%;
+    background-position: right bottom;
+    transition: background-position .3s ease-out, color .3s ease-out;
+    text-transform: uppercase;
+}
+
+.result button:hover {
+    background-position: left bottom;
+    color: rgb(255 , 255, 255);
+}
+
+ /* Modal feature */
+ .modal.active, .modal-background.active {
+    display: block;
+}
+
+.modal-background {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 50%);
+}
+ 
+.modal {
+   display: none;
+   position: absolute;
+   top: 40px;
+   width: 100%;
+   max-width: 500px;
+   padding: 40px 30px 30px;
+   z-index: 3;
+   background: #ffffff;
+   border-radius: 10px;
+}
+ 
+.modal .close {
+   position: absolute;
+   right: 30px;
+   cursor: pointer;
+}
+ 
+.modal .title {
+   color: hsl(229, 25%, 31%);
+   font-weight: 600;
+   font-size: 35px;
+}
+ 
+.modal .content {
+   text-align: center;
+}
+
+/* The rules button */
+.rules-button {
+   position: absolute;
+
+
+   border: 1px solid rgb(217, 16%, 45%);
+   padding: 10px 50px;
+   border-radius: 5px;
+   
+   right: 60px;
+   bottom: 100px;
+   cursor: pointer;
+   color: rgb(255 , 255, 255);
+   background: linear-gradient(to left, transparent 50%, rgb(0, 0, 0) 50%);
+   background-size: 250% 100%;
+   background-position: right bottom;
+   transition: background-position .3s ease-out, color .3s ease-out;
+   text-transform: uppercase;
+}
+
+.rules-button:hover {
+   background-position: left bottom;
+   color: rgb(214, 47%, 23%);
+}
+
 
 
 
