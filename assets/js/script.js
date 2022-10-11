@@ -38,19 +38,20 @@ function game() {
                 if (moves === 10) {
                     gameOver(playerOptions, movesLeft);
                 }
-            })
+            });
         });
     }
 
+    // Function to determine the winner
     function winner(player, computer) {
         const result = document.querySelector('.result');
         const playerScoreCount = document.querySelector('.p-score');
         const computerScoreCount = document.querySelector('.c-score');
-        const player = player.toLowerCase();
-        const computer = computer.toLowerCase();
+        player = player.toLowerCase();
+        computer = computer.toLowerCase();
 
         if (player === computer) {
-            result.textContent = 'Tie'
+            result.textContent = 'Tie';
         } else if (player === 'rock' && computer === 'fire' || 'scissors' || 'human' || 'sponge') {
             result.textContent = 'You won!';
             playerScore++;
@@ -124,13 +125,46 @@ function game() {
             computerScore++;
             computerScoreCount.textContent = computerScore;
         } else {
-            result.textContent = 'Something went wrong...'
+            result.textContent = 'Something went wrong...';
         }
     } 
 
+    // Function that will run when the game is over
+    function gameOver(playerOptions, movesLeft) {
+        const chooseMove = document.querySelector('.choose-move');
+        const result = document.querySelector('.result');
+        const reloadBtn = document.querySelector('reload');
+
+        playerOptions.forEach(option => {
+            option.style.display = 'none';
+        });
+
+        chooseMove.innerText = 'Game over!';
+        movesLeft.style.display = 'none';
+
+        if (playerScore > computerScore) {
+            result.innerText = 'Luck is on your side!';
+            result.style.fontSize = '25px';
+            result.style.color = 'green';
+        } else if (playerScore < computerScore) {
+            result.innerText = 'The machine wins this time!';
+            result.style.fontSize = '25px';
+            result.style.color = 'red';
+        } else {
+            result.innerText = 'It ended in a tie...';
+            result.style.fontSize = '25px';
+            result.style.color = 'grey';
+        }
+
+        reloadBtn.innerText = 'Restart';
+        reloadBtn.style.display = 'flex';
+        reloadBtn.addEventListener('click', function() {
+            window.location.reload();
+        });
+    }
+
+    playGame();
+
 }
 
-
-
-
-// Create functions for game over!
+game();
