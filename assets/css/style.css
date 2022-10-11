@@ -2,11 +2,32 @@
 
 /* Styles applied to the whole document */
 * {
-    padding: 0;
-    border: none;
-    margin: 0;
     box-sizing: border-box;
 }
+
+/* Styles applied to all images */
+img {
+    max-width: 100%;
+}
+
+.flex-row {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.flex-column {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+/* Hides elements when they are not supposed to be visible */
+.hidden {
+    display: none;
+}
+
+
+
+
 
 #logo, h2, h3 {
     font-family: 'Playfair Display SC', serif;
@@ -14,99 +35,4 @@
 
 #logo-random {
     font-family: 'Shadows Into Light', cursive;
-}
-
-/* To center everything in the game-section and add some general styling */
-#game {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    font-family: 'Crimson Text', serif;
-    background-color: rgb(38,0, 110);
-}
-
-/* The main logo */
-#logo {
-    position: absolute;
-    top: 0;
-    font-size: 80px;
-}
-
-/* The score board */
-.scoreboard {
-    position: absolute;
-    display: flex;
-    width: 50vw;
-    justify-content: space-evenly;
-    top: 200px;
-}
-
-.p-score,.c-score {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 25px;
-}
-
-/* The choose-move text */
-.choose-move {
-    font-size: 40px;
-    font-weight: bold;
-}
-
-/* The game-buttons */
-.options {
-    display: flex;
-    height: 5vh;
-    width: 60vw;
-    margin: 40px 0;
-    justify-content: space-evenly;
-}
-
-.button {
-    padding: 15px;
-    width: 100px;
-    border-radius: 10px;
-    background: rgb(158, 20, 2);
-    cursor: pointer;
-}
-
-.button:hover {
-    color: rgb(255, 255, 255);
-    border: 1px solid rgb(255, 255, 255);
-}
-
-/* The reload button and the result popup */
-.reload {
-    display: none;
-    height: 100px;
-    width: 100px;
-    margin-top: 10px;
-    padding: 15px;
-    background: rgb(158, 20, 2);
-    border-radius: 50px;
-    cursor: pointer;
-}
-
-.reload:hover {
-    color: rgb(255, 255, 255);
-    border: 1px solid rgb(255, 255, 255);
-}
-
-.result{
-    margin-top: 20px;
-    font-size: 20px;
-}
-
-/* The counter that shows the number of moves left */
-.moves-left {
-    font-size: 30px;
-}
-
-/* The box containing the rules */
-#rules-box {
-    position: absolute;
-    bottom: 80px;
 }

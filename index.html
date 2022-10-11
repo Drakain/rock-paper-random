@@ -14,66 +14,67 @@
 </head>
 
 <body>
-    <section id="game">
+
         <!-- Title -->
-        <h1 id="logo">Rock Paper <span id="logo-random">Random</span></h1>
+        <!-- <h1 id="logo">Rock Paper <span id="logo-random">Random</span></h1> -->
 
-        <!-- Displays the score -->
-        <div class="scoreboard"> 
-            <div class="player-score">
-                <h2>You</h2>
-                <p class="p-score">0</p>
-            </div>      
-            <div class="computer-score">
-                <h2>Computer</h2>
-                <p class="c-score">0</p>
-            </div>
-        </div>
+    <!-- Title-section -->
+    <section class="title-section">
+        <ul>
+            <li>Rock</li>
+            <li>Paper</li>
+            <li>Scissors</li>
+            <li>Lizard</li>
+            <li>Spock</li>
+        </ul>
 
-        <div class="choose-move">Choose your move</div>
-
-        <!-- Options available to the player -->
-        <div class="options">
-            <button class="button button-rock" aria-label="Choose Rock">Rock</button>
-            <button class="button button-paper" aria-label="Choose Paper">Paper</button>
-            <button class="button button-scissors" aria-label="Choose Scissors">Scissors</button>
-            <button class="button button-human" aria-label="Choose Human">Human</button>
-            <button class="button button-gun" aria-label="Choose Gun">Gun</button>
-            <button class="button button-sponge" aria-label="Choose Sponge">Sponge</button>
-            <button class="button button-air" aria-label="Choose Air">Air</button>
-            <button class="button button-fire" aria-label="Choose Fire">Fire</button>
-            <button class="button button-water" aria-label="Choose Water">Water</button>   
-        </div>
-
-        <!-- Shows how many moves are left -->
-        <div class="moves-left">Moves Left: 10</div>
-
-        <!-- Final result of the game -->
-        <div class="result"></div>
-
-        <!-- Allows the game to be reloaded once it is finsihed -->
-        <button class="reload" aria-label="Reload"></button>
-
-        <div id="rules-box">
-            <h3>Rules:</h3>
-        <p>
-            <ul id="rules-list">
-                <li>ROCK pounds out FIRE and crushes SCISSORS, HUMAN and SPONGE.</li>
-                <li>PAPER fans AIR, covers ROCK, floats on WATER and outlaws GUN.</li>
-                <li>SCISSORS swish through AIR, cut PAPER, HUMAN and SPONGE.</li>
-                <li>HUMAN cleans with SPONGE, writes on PAPER, breathes AIR and drinks WATER.</li>
-                <li>GUN targets ROCK, uses FIRE, breaks SCISSORS and shoots HUMAN.</li>
-                <li>SPONGE soaks PAPER, uses AIR pockets, absorbs WATER and cleans GUN.</li>
-                <li>AIR blows out FIRE, erodes ROCK, evaporates WATER and tarnishes GUN.</li>
-                <li>FIRE melts SCISSORS, burns PAPER, HUMAN and SPONGE.</li>
-                <li>WATER erodes ROCK, puts out FIRE, rusts SCISSORS and GUN.</li>
-            </ul>
-        </p>
+        <div class="score">
+            <div class="score-title">Wins</div>
+            <div class="score-counter">0</div>
         </div>
     </section>
+    
+    <!-- The options available to the player -->
+    <section class="player-options">
+        <div class="game-option rock"><img src="assets/images/rock.webp" alt="Icon for choosing rock"></div>
+        <div class="game-option paper"><img src="assets/images/paper.webp" alt="Icon for choosing paper"></div>
+        <div class="game-option scissors"><img src="assets/images/scissors.webp" alt="Icon for choosing scissors"></div>
+        <div class="game-option lizard"><img src="assets/images/lizard.webp" alt="Icon for choosing lizard"></div>
+        <div class="game-option spock"><img src="assets/images/spock.webp" alt="Icon for choosing Spock"></div>
+    </section>
+
+    <div class="section picked-options hidden">
+        <div class="choice">
+            <p>You chose</p>
+            <div class="player-choice"></div>
+        </div>
+
+        <div class="result hidden">
+            <div class="title">You lost!</div>
+            <button aria-label="Play again">Play again</button>
+        </div>
+
+        <div class="choice">
+            <p>The computer chose</p>
+            <div class="computer-choice"></div>
+        </div>
+    </div>
+
+    <!-- Button that when clicked shows the rules of the game -->
+    <button class="rules-button" aria-label="Rules">Rules</button>
+
+    <!-- Elements for creating a modal background when the player clicks on "Rules" -->
+    <div class="modal-background"></div>
+    <div class="modal-image">
+        <title>Rules</title>
+        <div class="rules-content">
+            <img src="assets/images/rules.webp" alt="An image explaining the rules">
+        </div>
+        <span class="close">
+            <img src="assets/images/close-icon.webp" alt="Icon for closing the window">
+        </span>
+    </div>
 
     <script src="assets/js/script.js"></script>
-    <!-- Font Awesome script -->
-    <script src="https://kit.fontawesome.com/2cd5455420.js" crossorigin="anonymous"></script>
 </body>
 </html>
