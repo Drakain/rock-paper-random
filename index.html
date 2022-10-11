@@ -14,67 +14,70 @@
 </head>
 
 <body>
+    <div class="container flex-column">
 
         <!-- Title -->
         <!-- <h1 id="logo">Rock Paper <span id="logo-random">Random</span></h1> -->
 
-    <!-- Title-section -->
-    <section class="title-section">
-        <ul>
-            <li>Rock</li>
-            <li>Paper</li>
-            <li>Scissors</li>
-            <li>Lizard</li>
-            <li>Spock</li>
-        </ul>
+        <!-- Title-section -->
+        <section class="title-section flex-row">
+            <ul>
+                <li>Rock</li>
+                <li>Paper</li>
+                <li>Scissors</li>
+                <li>Lizard</li>
+                <li>Spock</li>
+            </ul>
 
-        <div class="score">
-            <div class="score-title">Wins</div>
-            <div class="score-counter">0</div>
-        </div>
-    </section>
+            <div class="score flex-column">
+                <div class="score-title">Wins</div>
+                <div class="score-counter">0</div>
+            </div>
+        </section>
     
-    <!-- The options available to the player -->
-    <section class="player-options">
-        <div class="game-option rock"><img src="assets/images/rock.webp" alt="Icon for choosing rock"></div>
-        <div class="game-option paper"><img src="assets/images/paper.webp" alt="Icon for choosing paper"></div>
-        <div class="game-option scissors"><img src="assets/images/scissors.webp" alt="Icon for choosing scissors"></div>
-        <div class="game-option lizard"><img src="assets/images/lizard.webp" alt="Icon for choosing lizard"></div>
-        <div class="game-option spock"><img src="assets/images/spock.webp" alt="Icon for choosing Spock"></div>
-    </section>
+        <!-- The options available to the player -->
+        <section class="player-options">
+            <div class="game-option rock"><img src="assets/images/rock.webp" alt="Icon for choosing rock"></div>
+            <div class="game-option paper"><img src="assets/images/paper.webp" alt="Icon for choosing paper"></div>
+            <div class="game-option scissors"><img src="assets/images/scissors.webp" alt="Icon for choosing scissors"></div>
+            <div class="game-option lizard"><img src="assets/images/lizard.webp" alt="Icon for choosing lizard"></div>
+            <div class="game-option spock"><img src="assets/images/spock.webp" alt="Icon for choosing Spock"></div>
+        </section>
 
-    <div class="section picked-options hidden">
-        <div class="choice">
-            <p>You chose</p>
-            <div class="player-choice"></div>
+        <!-- The screen showing the results -->
+        <div class="section picked-options flex-row hidden">
+            <div class="choice flex-column">
+                <p>You chose</p>
+                <div class="player-choice"></div>
+            </div>
+
+            <div class="result hidden">
+                <div class="title">You lost!</div>
+                <button aria-label="Play again">Play again</button>
+            </div>
+
+            <div class="choice flex-column">
+                <p>The computer chose</p>
+                <div class="computer-choice"></div>
+            </div>
         </div>
 
-        <div class="result hidden">
-            <div class="title">You lost!</div>
-            <button aria-label="Play again">Play again</button>
+        <!-- Button that when clicked shows the rules of the game -->
+        <button class="rules-button" aria-label="Rules">Rules</button>
+
+        <!-- Elements for creating a modal background when the player clicks on "Rules" -->
+        <div class="modal-background"></div>
+        <div class="modal-image">
+            <title>Rules</title>
+            <div class="rules-content">
+                <img src="assets/images/rules.webp" alt="An image explaining the rules">
+            </div>
+            <span class="close">
+                <img src="assets/images/close-icon.webp" alt="Icon for closing the window">
+            </span>
         </div>
+</div>
 
-        <div class="choice">
-            <p>The computer chose</p>
-            <div class="computer-choice"></div>
-        </div>
-    </div>
-
-    <!-- Button that when clicked shows the rules of the game -->
-    <button class="rules-button" aria-label="Rules">Rules</button>
-
-    <!-- Elements for creating a modal background when the player clicks on "Rules" -->
-    <div class="modal-background"></div>
-    <div class="modal-image">
-        <title>Rules</title>
-        <div class="rules-content">
-            <img src="assets/images/rules.webp" alt="An image explaining the rules">
-        </div>
-        <span class="close">
-            <img src="assets/images/close-icon.webp" alt="Icon for closing the window">
-        </span>
-    </div>
-
-    <script src="assets/js/script.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
